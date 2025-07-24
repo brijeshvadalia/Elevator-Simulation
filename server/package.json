@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Backend for elevator simulation",
   "main": "dist/server.js",
-  "scripts": {
-    "start": "ts-node src/app.ts",
-    "build": "tsc",
-    "dev": "nodemon src/app.ts"
-  },
+"scripts": {
+  "start": "node dist/server.js",
+  "build": "tsc",
+  "dev": "nodemon src/app.ts"
+},
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
