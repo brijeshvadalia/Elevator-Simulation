@@ -4,8 +4,8 @@
   "description": "Backend for elevator simulation",
   "main": "dist/server.js",
 "scripts": {
-  "start": "node dist/server.js",
-  "build": "tsc",
+  "build": "npm install && tsc",
+  "start": "node dist/app.js",
   "dev": "nodemon src/app.ts"
 },
   "dependencies": {
