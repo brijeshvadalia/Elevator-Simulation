@@ -1,0 +1,70 @@
+/* client/src/components/ReportPanel.css */
+.report-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.generate-btn {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.generate-btn:hover {
+  background: #3a56d4;
+}
+
+.generate-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.report-content {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.report-content pre {
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 1rem;
+}
+
+.copy-btn, .download-btn {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.copy-btn {
+  background: #f8f9fa;
+  border: 1px solid #4361ee;
+  color: #4361ee;
+}
+
+.download-btn {
+  background: #4361ee;
+  color: white;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}

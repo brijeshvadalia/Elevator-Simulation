@@ -1,0 +1,133 @@
+:root {
+    --elevator-width: 80px;
+    --floor-height: 60px;
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --panel-bg: #fff;
+    --border-color: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.building {
+    display: flex;
+    flex: 3;
+    background-color: var(--panel-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.floor-panels {
+    width: 100px;
+    background-color: #f0f0f0;
+    border-right: 1px solid var(--border-color);
+    padding: 0.5rem;
+}
+
+.elevator-shafts {
+    display: flex;
+    flex: 1;
+    padding: 0.5rem;
+    gap: 1rem;
+    overflow-x: auto;
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+    min-width: 300px;
+}
+
+.loading, .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+}
+
+.error {
+    color: var(--accent-color);
+}
+/* App.css additions */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .main-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.simulation-status {
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator {
+    background: rgba(0,0,0,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-indicator.active {
+    background: #4cc9f0;
+    box-shadow: 0 0 0 2px rgba(76,201,240,0.3);
+}
+
+.building-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.control-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
