@@ -8,7 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:3000";
+
+app.use(cors({
+  origin: CORS_ORIGIN
+}));
 const defaultConfig: SimulationConfig = {
     numberOfFloors: 10,
     numberOfElevators: 4,
