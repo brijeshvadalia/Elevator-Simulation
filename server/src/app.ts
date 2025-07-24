@@ -1,5 +1,5 @@
-import express from 'express';
-import cors from 'cors';
+import express, { Request, Response, NextFunction } from 'express';
+import cors, { CorsOptions } from 'cors';
 import { SimulationService } from './services/SimulationService';
 import { SimulationConfig } from './models/Elevator';
 import { ReportService } from './services/ReportService';
