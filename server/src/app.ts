@@ -22,7 +22,17 @@ app.use(cors({
     }
   }
 }));
+const corsOptions: CorsOptions = {
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
 
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Default Configuration
@@ -39,12 +49,8 @@ const defaultConfig: SimulationConfig = {
 let simulationService = new SimulationService(defaultConfig);
 
 // Health Check Endpoint
-app.get('/health', (req, res) => {
-  res.status(200).json({ 
-    status: 'healthy',
-    version: '1.0.0',
-    uptime: process.uptime()
-  });
+app.get('/health', (req: Request, res: Response) => {
+  res.status(200).json({ status: 'healthy' });
 });
 
 // Simulation Endpoints
