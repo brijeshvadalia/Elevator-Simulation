@@ -12,16 +12,13 @@ export const ReportPanel: React.FC = () => {
     setReport('');
     
     try {
-      // Directly use the environment variable
       const apiUrl = process.env.REACT_APP_API_URL;
-      if (!apiUrl) {
-        throw new Error('Backend API URL is not configured');
-      }
+      if (!apiUrl) throw new Error('API URL not configured in environment variables');
 
       const response = await fetch(`${apiUrl}/report`);
       
       if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
+        throw new Error(`Server responded with status: ${response.status}`);
       }
 
       const generatedReport = await response.text();
