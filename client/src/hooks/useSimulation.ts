@@ -9,15 +9,17 @@ export const useSimulation = () => {
     const [error, setError] = useState<string | null>(null);
 
     const fetchState = async () => {
-        try {
-            const response = await fetch(`${API_URL}/state`);
-            const data = await response.json();
-            setState(data);
-        } catch (err) {
-            setError('Failed to fetch simulation state');
-            console.error(err);
-        }
-    };
+  try {
+    const response = await fetch(`${API_URL}/state`);
+    if (!response.ok) throw new Error('API failed');
+    const data = await response.json();
+    setState(data);
+  } catch (err) {
+    console.error('API Error:', err);
+    // Retry after 5 seconds
+    setTimeout(fetchState, 5000);
+  }
+};
 
     useEffect(() => {
         const interval = setInterval(fetchState, 1000);
