@@ -11,13 +11,16 @@ export const useSimulation = () => {
     const fetchState = async () => {
   try {
     const response = await fetch(`${API_URL}/state`);
-    if (!response.ok) throw new Error('API failed');
+    console.log('API Response:', response); 
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
     setState(data);
   } catch (err) {
-    console.error('API Error:', err);
-    // Retry after 5 seconds
-    setTimeout(fetchState, 5000);
+    console.error('API Request Failed:', {
+      error: err,
+      endpoint: `${API_URL}/state`,
+      time: new Date().toISOString()
+    });
   }
 };
 
