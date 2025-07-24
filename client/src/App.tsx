@@ -106,7 +106,7 @@ const App: React.FC = () => {
                         onConfigChange={updateConfig}
                     />
                     <MetricsPanel state={state} />
-                    <ReportPanel onGenerate={generateReport} />
+                    <ReportPanel />
                 </div>
             </div>
         </div>
