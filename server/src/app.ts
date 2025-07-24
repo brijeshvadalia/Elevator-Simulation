@@ -18,7 +18,6 @@ const PORT = process.env.PORT || 3001;
 
 // CORS Configuration with proper typing
 const allowedOrigins = [
-  'http://localhost:3000',
   'https://elevator-simulation-meng.onrender.com'
 ];
 
