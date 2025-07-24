@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Direction, SimulationState, SimulationConfig } from '../types/elevator';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 export const useSimulation = () => {
     const [state, setState] = useState<SimulationState | null>(null);
